@@ -33,7 +33,7 @@
         <li>two</li>
         <li>
           tree
-          <ul>
+          <ul class="sublist">
             <li>1</li>
             <li>2</li>
             <li>3</li>
@@ -92,6 +92,13 @@
 
     $('li').on('click', function() {
       $(this).hide();
+      if (
+        $(this)
+          .parent()
+          .is('.sublist')
+      ) {
+        $(this.hide());
+      }
     });
 
     $(function() {});
