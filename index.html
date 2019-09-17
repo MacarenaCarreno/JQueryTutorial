@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style src="./style.css"></style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Let's Have Fun</div>
+    <div>
+      <button class="panel-button" data-panelid="panel1">Btn1</button>
+      <button class="panel-button" data-panelid="panel2">Btn2</button>
+      <button class="panel-button" data-panelid="panel3">Btn3</button>
+      <button class="panel-button" data-panelid="panel4">Btn4</button>
+    </div>
+    <div>
+      <div id="panel1">Panel 1</div>
+      <div id="panel2">Panel 2</div>
+      <div id="panel3">Panel 3</div>
+      <div id="panel4">
+        Panel 4
+        <div class="panelBody">
+          Hola Mundo!!
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>
+          tree
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+
+  <script src="./jquery.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      // $('#btn1')
+      //   .hide(400)
+      //   .show(1000);
+
+      // $('#btn2').css({
+      //   color: 'red',
+      // });
+
+      // $('#btn3').html('My Button');
+
+      // $('#btn1').on('click', function() {
+      //   $('#panel1').fadeToggle(200);
+      // });
+
+      // $('#btn2').on('click', function() {
+      //   $('#panel2').fadeToggle(200);
+      // });
+
+      // $('#btn3').on('click', function() {
+      //   $('#panel3').fadeToggle(200);
+      // });
+
+      // $('#btn4').on('click', function() {
+      //   $('#panel4 .panelBody').html('my New body! here :) ');
+      // });
+
+      $('.panel-button').on('click', function() {
+        // $('#panel2').fadeToggle(200);
+        var content = 'My new awesome Content';
+        var panelId = $(this).attr('data-panelid');
+        $('#' + panelId).toggle();
+        console.log(panelId, '////', content);
+        $('#' + panelId + ' .panelBody').html(content);
+      });
+    });
+
+    // $('li').on('click', function() {
+    //   $(this)
+    //     .find('li')
+    //     .filter(':first')
+    //     .remove();
+    // });
+
+    $('li').on('click', function() {
+      $(this).hide();
+    });
+
+    $(function() {});
+  </script>
+</html>
